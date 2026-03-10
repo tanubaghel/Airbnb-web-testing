@@ -3,50 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayClone - Find your next adventure</title>
+    <title>StayClone | Holiday Rentals & Cabins</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <nav class="flex items-center justify-between px-10 py-4 bg-white border-b sticky top-0 z-50">
-        <div class="text-pink-600 font-bold text-2xl">StayClone</div>
-        <div class="hidden md:flex space-x-6 font-semibold text-gray-600">
-            <a href="#">Stays</a>
-            <a href="#">Experiences</a>
-            <a href="#">Online Experiences</a>
+<body class="bg-white pb-20 md:pb-0">
+
+    <nav class="flex items-center justify-between px-6 md:px-16 py-4 bg-white border-b sticky top-0 z-50">
+        <div class="text-[#ff385c] font-bold text-3xl tracking-tighter cursor-pointer">
+            stayclone
         </div>
-        <div class="border rounded-full py-2 px-4 shadow-sm hover:shadow-md transition cursor-pointer">
-            <span class="font-semibold">Sign In</span>
+        
+        <div class="hidden md:flex items-center border shadow-sm hover:shadow-md transition rounded-full px-4 py-2 gap-4 cursor-pointer">
+            <button class="font-semibold text-sm border-r pr-4">Anywhere</button>
+            <button class="font-semibold text-sm border-r pr-4">Any week</button>
+            <button class="text-sm text-gray-500">Add guests</button>
+            <div class="bg-[#ff385c] p-2 rounded-full text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3 h-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <p class="hidden md:block text-sm font-semibold cursor-pointer hover:bg-gray-100 p-3 rounded-full">Airbnb your home</p>
+            <div class="flex items-center border p-2 rounded-full gap-3 hover:shadow-md cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <div class="bg-gray-500 text-white rounded-full p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <header class="max-w-6xl mx-auto mt-10 p-6">
-        <div class="bg-white shadow-xl rounded-full p-4 flex items-center justify-between border">
-            <div class="px-6 border-r flex-1">
-                <p class="text-xs font-bold">Location</p>
-                <input type="text" placeholder="Where are you going?" class="outline-none text-sm w-full">
+    <div class="sticky top-[73px] bg-white z-40 border-b">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center space-x-10 overflow-x-auto no-scrollbar text-gray-500">
+            <div class="flex flex-col items-center gap-2 cursor-pointer hover:text-black border-b-2 border-transparent hover:border-gray-300 pb-2 transition min-w-[56px]">
+                <span class="text-2xl">🏝️</span>
+                <span class="text-xs font-semibold">Islands</span>
             </div>
-            <div class="px-6 border-r flex-1">
-                <p class="text-xs font-bold">Check in</p>
-                <p class="text-sm text-gray-400">Add dates</p>
+            <div class="flex flex-col items-center gap-2 cursor-pointer text-black border-b-2 border-black pb-2 min-w-[56px]">
+                <span class="text-2xl">🏰</span>
+                <span class="text-xs font-semibold">Castles</span>
             </div>
-            <div class="px-6 flex-1">
-                <p class="text-xs font-bold">Who</p>
-                <p class="text-sm text-gray-400">Add guests</p>
+            <div class="flex flex-col items-center gap-2 cursor-pointer hover:text-black border-b-2 border-transparent hover:border-gray-300 pb-2 transition min-w-[56px]">
+                <span class="text-2xl">🏔️</span>
+                <span class="text-xs font-semibold">Amazing views</span>
             </div>
-            <button class="bg-pink-600 text-white p-4 rounded-full">Search</button>
+            <div class="flex flex-col items-center gap-2 cursor-pointer hover:text-black border-b-2 border-transparent hover:border-gray-300 pb-2 transition min-w-[56px]">
+                <span class="text-2xl">⛺</span>
+                <span class="text-xs font-semibold">Camping</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 cursor-pointer hover:text-black border-b-2 border-transparent hover:border-gray-300 pb-2 transition min-w-[56px]">
+                <span class="text-2xl">❄️</span>
+                <span class="text-xs font-semibold">Arctic</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 cursor-pointer hover:text-black border-b-2 border-transparent hover:border-gray-300 pb-2 transition min-w-[56px]">
+                <span class="text-2xl">🏡</span>
+                <span class="text-xs font-semibold">Tiny homes</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 cursor-pointer hover:text-black border-b-2 border-transparent hover:border-gray-300 pb-2 transition min-w-[56px]">
+                <span class="text-2xl">🏊</span>
+                <span class="text-xs font-semibold">Amazing pools</span>
+            </div>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="cursor-pointer group">
-            <div class="aspect-square overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800" class="object-cover h-full w-full group-hover:scale-105 transition duration-300">
+    <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10 mt-4">
+        
+        <div class="cursor-pointer group relative">
+            <button onclick="toggleHeart(this)" class="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(0,0,0,0.4)" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-7 h-7 transition-colors">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+            </button>
+            <div class="aspect-square overflow-hidden rounded-xl bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800" class="object-cover h-full w-full group-hover:scale-105 transition duration-300">
             </div>
-            <h3 class="font-bold mt-2">Lake Como, Italy</h3>
-            <p class="text-gray-500">4,500 miles away</p>
-            <p class="text-gray-500 underline">Oct 12-17</p>
-            <p class="mt-1"><span class="font-bold">$420</span> night</p>
+            <div class="flex justify-between items-center mt-3">
+                <h3 class="font-bold text-gray-900">Paris, France</h3>
+                <span class="flex items-center gap-1 text-sm">★ 4.85</span>
+            </div>
+            <p class="text-gray-500 text-sm">Eiffel Tower views</p>
+            <p class="text-gray-500 text-sm">Oct 20-25</p>
+            <p class="mt-1 text-sm"><span class="font-bold text-base">$320</span> night</p>
         </div>
-        </main>
+
+        <div class="cursor-pointer group relative">
+            <button onclick="toggleHeart(this)" class="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(0,0,0,0.4)" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-7 h-7 transition-colors">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+            </button>
+            <div class="aspect-square overflow-hidden rounded-xl bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800" class="object-cover h-full w-full group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="flex justify-between items-center mt-3">
+                <h3 class="font-bold text-gray-900">Malibu, California</h3>
+                <span class="flex items-center gap-1 text-sm">★ 4.98</span>
+            </div>
+            <p class="text-gray-500 text-sm">Beachfront villa</p>
+            <p class="text-gray-500 text-sm">Nov 1-6</p>
+            <p class="mt-1 text-sm"><span class="font-bold text-base">$850</span> night</p>
+        </div>
+
+        <div class="cursor-pointer group relative">
+            <button onclick="toggleHeart(this)" class="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(0,0,0,0.4)" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-7 h-7 transition-colors">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+            </button>
+            <div class="aspect-square overflow-hidden rounded-xl bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800" class="object-cover h-full w-full group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="flex justify-between items-center mt-3">
+                <h3 class="font-bold text-gray-900">Kyoto, Japan</h3>
+                <span class="flex items-center gap-1 text-sm">★ 4.92</span>
+            </div>
+            <p class="text-gray-500 text-sm">Traditional Machiya</p>
+            <p class="text-gray-500 text-sm">Dec 12-18</p>
+            <p class="mt-1 text-sm"><span class="font-bold text-base">$195</span> night</p>
+        </div>
+
+        <div class="cursor-pointer group relative">
+            <button onclick="toggleHeart(this)" class="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(0,0,0,0.4)" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-7 h-7 transition-colors">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+            </button>
+            <div class="aspect-square overflow-hidden rounded-xl bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=800" class="object-cover h-full w-full group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="flex justify-between items-center mt-3">
+                <h3 class="font-bold text-gray-900">Swiss Alps</h3>
+                <span class="flex items-center gap-1 text-sm">★ 5.0</span>
+            </div>
+            <p class="text-gray-500 text-sm">Cozy Mountain Hut</p>
+            <p class="text-gray-500 text-sm">Jan 5-10</p>
+            <p class="mt-1 text-sm"><span class="font-bold text-base">$280</span> night</p>
+        </div>
+    </main>
+
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t py-3 flex justify-around items-center z-50">
+        <div class="flex flex-col items-center text-[#ff385c]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+            <span class="text-[10px] font-medium mt-1">Explore</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+            <span class="text-[10px] font-medium mt-1">Wishlists</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+            <span class="text-[10px] font-medium mt-1">Log in</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleHeart(btn) {
+            const svg = btn.querySelector('svg');
+            const isFilled = svg.getAttribute('fill') === '#ff385c';
+            
+            if (isFilled) {
+                svg.setAttribute('fill', 'rgba(0,0,0,0.4)');
+                svg.setAttribute('stroke', 'white');
+            } else {
+                svg.setAttribute('fill', '#ff385c');
+                svg.setAttribute('stroke', '#ff385c');
+            }
+        }
+    </script>
+
 </body>
 </html>
