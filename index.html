@@ -5,41 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StayClone - Find your next adventure</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth fade-in for the modal */
+        .modal-enter {
+            animation: fadeIn 0.2s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
+
     <nav class="flex items-center justify-between px-10 py-4 bg-white border-b sticky top-0 z-50">
-        <div class="text-pink-600 font-bold text-2xl">StayClone</div>
+        <div class="text-pink-600 font-bold text-2xl cursor-pointer">StayClone</div>
         <div class="hidden md:flex space-x-6 font-semibold text-gray-600">
-            <a href="#">Stays</a>
-            <a href="#">Experiences</a>
-            <a href="#">Online Experiences</a>
+            <a href="#" class="hover:text-black">Stays</a>
+            <a href="#" class="hover:text-black">Experiences</a>
+            <a href="#" class="hover:text-black">Online Experiences</a>
         </div>
-        <div class="border rounded-full py-2 px-4 shadow-sm hover:shadow-md transition cursor-pointer">
-            <span class="font-semibold">Sign In</span>
+        <div id="signInBtn" class="border rounded-full py-2 px-4 shadow-sm hover:shadow-md transition cursor-pointer active:scale-95 bg-white">
+            <span class="font-semibold text-gray-700">Sign In</span>
         </div>
     </nav>
 
     <header class="max-w-6xl mx-auto mt-10 p-6">
         <div class="bg-white shadow-xl rounded-full p-4 flex items-center justify-between border">
             <div class="px-6 border-r flex-1">
-                <p class="text-xs font-bold">Location</p>
-                <input type="text" placeholder="Where are you going?" class="outline-none text-sm w-full">
+                <p class="text-xs font-bold uppercase">Location</p>
+                <input type="text" placeholder="Where are you going?" class="outline-none text-sm w-full bg-transparent">
             </div>
-            <div class="px-6 border-r flex-1">
-                <p class="text-xs font-bold">Check in</p>
+            <div class="px-6 border-r flex-1 cursor-pointer">
+                <p class="text-xs font-bold uppercase">Check in</p>
                 <p class="text-sm text-gray-400">Add dates</p>
             </div>
-            <div class="px-6 flex-1">
-                <p class="text-xs font-bold">Who</p>
+            <div class="px-6 flex-1 cursor-pointer">
+                <p class="text-xs font-bold uppercase">Who</p>
                 <p class="text-sm text-gray-400">Add guests</p>
             </div>
-            <button class="bg-pink-600 text-white p-4 rounded-full">Search</button>
+            <button class="bg-pink-600 hover:bg-pink-700 text-white p-4 rounded-full transition active:scale-90">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="cursor-pointer group">
-            <div class="aspect-square overflow-hidden rounded-xl">
+            <div class="aspect-square overflow-hidden rounded-xl bg-gray-200">
                 <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800" class="object-cover h-full w-full group-hover:scale-105 transition duration-300">
             </div>
             <h3 class="font-bold mt-2">Lake Como, Italy</h3>
@@ -47,6 +62,78 @@
             <p class="text-gray-500 underline">Oct 12-17</p>
             <p class="mt-1"><span class="font-bold">$420</span> night</p>
         </div>
-        </main>
+    </main>
+
+    <div id="loginModal" class="hidden fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl modal-enter">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold">Log in or sign up</h2>
+                <button id="closeModal" class="text-gray-500 hover:bg-gray-100 rounded-full h-8 w-8 flex items-center justify-center transition">&times;</button>
+            </div>
+            
+            <hr class="mb-6">
+            
+            <h3 class="text-2xl font-semibold mb-6">Welcome to StayClone</h3>
+            
+            <form id="loginForm" class="space-y-4">
+                <div class="border rounded-lg overflow-hidden">
+                    <input type="email" required placeholder="Email" class="w-full p-4 border-b focus:bg-gray-50 outline-none text-sm">
+                    <input type="password" required placeholder="Password" class="w-full p-4 focus:bg-gray-50 outline-none text-sm">
+                </div>
+                
+                <p class="text-xs text-gray-500">
+                    We’ll call or text you to confirm your number. Standard message and data rates apply.
+                </p>
+
+                <button type="submit" class="w-full bg-pink-600 text-white font-bold py-3 rounded-lg hover:bg-pink-700 transition active:scale-[0.98]">
+                    Continue
+                </button>
+            </form>
+
+            <div class="relative my-6">
+                <div class="absolute inset-0 flex items-center"><span class="w-full border-t"></span></div>
+                <div class="relative flex justify-center text-xs uppercase"><span class="bg-white px-2 text-gray-500">or</span></div>
+            </div>
+
+            <button class="w-full border-2 border-gray-800 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-50 transition mb-3 flex items-center justify-center gap-2">
+                Continue with Google
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const signInBtn = document.getElementById('signInBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.getElementById('closeModal');
+        const loginForm = document.getElementById('loginForm');
+
+        // 1. Open Modal
+        signInBtn.addEventListener('click', () => {
+            loginModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when open
+        });
+
+        // 2. Close Modal (Button)
+        closeModal.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+
+        // 3. Close Modal (Click outside)
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 4. Handle Form Submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Sign in attempted! Redirecting...');
+            loginModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
 </body>
 </html>
